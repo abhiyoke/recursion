@@ -24,6 +24,7 @@ using namespace std;
 void subsequence(int ind,int a[],vector<int>&seq,int n){
 	if(ind==n){
 		for(auto it:seq) cout<<it<<" ";
+		if(seq.size()==0) cout<<"{}";
 		   cout<<endl;
 		return;
 	}
