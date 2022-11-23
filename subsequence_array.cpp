@@ -1,3 +1,5 @@
+// Time complexity : O(N*(2^N))
+// Space complexity : O(N*(2^N))
 #include <bits/stdc++.h>
 using namespace std;
 #define all(v) v.begin(),v.end()
