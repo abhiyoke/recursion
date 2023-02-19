@@ -21,6 +21,7 @@ using namespace std;
 #define mod 1e9 + 7
 #define inf 1e15
 int subksum(int ind,int s,int sum,int a[],int n){
+	if(s>sum) return 0;
 	if(ind==n){
 		if(s==sum)return 1;
 		else return 0;
