@@ -20,17 +20,17 @@ using namespace std;
 #define S second
 #define mod 1e9 + 7
 #define inf 1e15
-int subksum(int ind,vector<int>&ds,int s,int sum,int a[],int n){
+int subksum(int ind,int s,int sum,int a[],int n){
 	if(ind==n){
 		if(s==sum)return 1;
 		else return 0;
 	}
-	ds.pb(a[ind]);
+	
 	s+=a[ind];
-	int l=subksum(ind+1,ds,s,sum,a,n);
+	int l=subksum(ind+1,s,sum,a,n);
 	s-=a[ind];
-		ds.po();
-	int r=subksum(ind+1,ds,s,sum,a,n);
+		
+	int r=subksum(ind+1,s,sum,a,n);
 	return l + r;
 }
 signed main() {
@@ -40,8 +40,7 @@ ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
     cin>>n>>sum;
     int a[n];
     fo(i,0,n) cin>>a[i];
-    vector<int>ds;
-    cout<<subksum(0,ds,0,sum,a,n);
+    cout<<subksum(0,0,sum,a,n);
     cout<<endl;
 return 0;    
 }
